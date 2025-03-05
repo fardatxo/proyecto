@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f1e5;
+    color: #5a3e2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Centrado horizontal */
+    min-height: 100vh; /* Esto asegura que el contenido no se quede corto en la altura */
+}
+
+/* Header y navegación */
+header {
+    background-color: #d4a373;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+footer {
+    background-color: #d4a373;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: auto; /* Empuja el footer al final de la pantalla */
+}
+
+footer p {
+    margin: 10;
+}

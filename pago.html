@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleformulario.css">
+    <title>Página de Pago</title>
+
+</head>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="Proyecto.html">Home</a></li>
+            <li><a href="Productos.html">Productos</a></li>
+            <li><a href="Conocenos.html">Conócenos</a></li>
+            <li><a href="Preguntas.html">Preguntas Frecuentes</a></li>
+            <li><a href="Formulario.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="contenedor">
+        <h1 style="margin-top: 80px;">Finalizar Compra</h1>
+        <p id="producto-info"></p>
+        <form>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" required>
+            
+            <label for="tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="tarjeta" required>
+            
+            <label for="fecha">Fecha de Expiración:</label>
+            <input type="text" id="fecha" placeholder="MM/AA" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" required>
+            
+            <button type="submit">Pagar</button>
+        </form>
+    </div>
+    <script>
+        // Esperar a que el DOM esté completamente cargado
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const producto = params.get("producto") || "No seleccionado";
+            const precio = params.get("precio") || "0";
+    
+            // Verificar si el elemento existe antes de modificarlo
+            const productoInfo = document.getElementById("producto-info");
+            if (productoInfo) {
+                productoInfo.innerText = `Producto: ${producto} - Precio: $${precio}`;
+            }
+        });
+    </script>
+</body>
+</html>
